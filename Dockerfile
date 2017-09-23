@@ -6,3 +6,5 @@ ENV SMTP_HOST=smtp
 
 COPY content /
 RUN common-setup
+
+ENTRYPOINT ["common-entrypoint"]

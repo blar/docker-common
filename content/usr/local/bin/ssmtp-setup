@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+ssmtp_config_file=/etc/ssmtp/ssmtp.conf
+
+rm -f $ssmtp_config_file
+
+if [ "$SMTP_HOST" ]; then
+    echo mailhub=$SMTP_HOST >> $ssmtp_config_file
+fi
+
+if [ "$SMTP_AUTH_USER" ]; then
+    echo AuthUser=$SMTP_AUTH_USER >> $ssmtp_config_file
+fi
+
+if [ "$SMTP_AUTH_PASS" ]; then
+    echo AuthPass=$SMTP_AUTH_PASS >> $ssmtp_config_file
+fi
+
+echo FromLineOverride=yes >> $ssmtp_config_file

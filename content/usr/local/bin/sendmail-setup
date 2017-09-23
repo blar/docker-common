@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+# Dieser Alias ist dafür da, dass sendmail von alpine einfacher gegen SSMTP ausgetauscht werden kann.
+export SMTPHOST=$SMTP_HOST

@@ -8,3 +8,4 @@ COPY content /
 RUN common-setup
 
 ENTRYPOINT ["common-entrypoint"]
+CMD ["sh"]

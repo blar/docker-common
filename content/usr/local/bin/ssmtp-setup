@@ -4,16 +4,20 @@ ssmtp_config_file=/etc/ssmtp/ssmtp.conf
 
 rm -f $ssmtp_config_file
 
-if [ "$SMTP_HOST" ]; then
-    echo mailhub=$SMTP_HOST >> $ssmtp_config_file
+if [ "$SMTP_HOSTNAME" ]; then
+    echo mailhub=$SMTP_HOSTNAME >> $ssmtp_config_file
 fi
 
 if [ "$SMTP_AUTH_USER" ]; then
-    echo AuthUser=$SMTP_AUTH_USER >> $ssmtp_config_file
+    echo AuthUser=$SMTP_AUTH_USERNAME >> $ssmtp_config_file
 fi
 
 if [ "$SMTP_AUTH_PASS" ]; then
-    echo AuthPass=$SMTP_AUTH_PASS >> $ssmtp_config_file
+    echo AuthPass=$SMTP_AUTH_PASSWORD >> $ssmtp_config_file
+fi
+
+if [ "$SMTP_STARTTLS" ]; then
+    echo UseSTARTTLS=$SMTP_STARTTLS >> $ssmtp_config_file
 fi
 
 echo FromLineOverride=yes >> $ssmtp_config_file

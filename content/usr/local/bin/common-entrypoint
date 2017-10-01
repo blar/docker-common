@@ -1,6 +1,3 @@
 #!/usr/bin/env sh
 
-# source wird benötigt um die Umgebungsvariablen aus sendmail-setup zu exportieren.
-source sendmail-setup
-
 exec "$@"

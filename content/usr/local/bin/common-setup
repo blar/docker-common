@@ -5,9 +5,6 @@ apk update
 # wget benötigt OpenSSL um Verbindungen per HTTPS aufbauen zu können.
 apk add openssl
 
-# Im Paket findutils sind befindet sich die GNU-Versionen von:
-# xargs um mehrere Prozesse auf einmal auszuführen
-# find mit der Option -xtype um den Typ des Linkziels zu ermitteln und so kaputten Linkziele auszuschliessen
-apk add findutils
+apk add ca-certificates
 
 apk-cache-flush

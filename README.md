@@ -5,14 +5,6 @@
 Zum versenden von E-Mails wird der Standardbefehl ``sendmail`` von Busybox verwendet. Im Verzeichnis ``/usr/local/bin``
 befindet sich ein Wrapper, damit mehr Einstellung über Umgebungsvariablen gesetzt werden können.
 
-## SSMTP
-
-Noch nicht getestet!
-
-Sollte ``sendmail`` von alpine nicht ausreichend sein, so kann ``ssmtp`` installiert werden. Im ``entrypoint`` sollte
-dann bei jedem Start des Containers ``ssmtp-setup`` aufgerufen werden, damit folgende Umgebungsvariablen in die
-Konfigurationsdatei /etc/ssmtp/ssmtp.conf übernommen werden.
-
 ## GMAIL
 
 Hier ein Beispiel der Umgebungsvariablen, die gesetzt werden müssen, um E-Mails über gmail.com zu versenden.
@@ -62,12 +54,3 @@ Soll STARTTLS verwendet werden, so muss diese Umgebungsvariable auf ``yes`` gese
 
 Standardwert: no
 
-### SSMTP_FROM_OVERRIDE
-
-Noch nicht getestet!
-
-Wird nur von ``SSMTP`` verwendet.
-
-Falls ``SSMTP_FROM_OVERRIDE`` auf ``yes`` steht, kann der Absender über den Header ``From`` überschrieben werden. Falls
-``SSMTP_FROM_OVERRIDE`` auf ``no`` steht, wird der aktuelle Benutzer und Hostname des Systems und die
-``/etc/ssmtp/revaliases`` verwendet.

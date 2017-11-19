@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+
+# netrc-add $hostname $username $password
+
+if [ -z "$1" ]; then
+    echo No hostname provided >&2
+    exit 1
+fi
+
+if [ -z "$2" ]; then
+    echo No username provided >&2
+    exit 1
+fi
+
+echo machine $1 >> ~/.netrc
+echo login $2 >> ~/.netrc
+
+if [ -n "$3" ]; then
+    echo password $3 >> ~/.netrc
+fi
